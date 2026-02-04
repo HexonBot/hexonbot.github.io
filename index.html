@@ -1,126 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OpenClaw HexonBot</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>HexonBot</title>
+  <meta name="description" content="HexonBot — an open hexapod robotics platform. Built to be forked, modified, and understood.">
 
-  <style>
-    :root {
-      --bg: #0f0f10;        /* deep charcoal */
-      --fg: #e6e6e6;        /* soft white */
-      --muted: #a0a0a0;
-      --faint: #6f6f6f;
-      --max-width: 720px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 96px 28px;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-size: clamp(2.6rem, 5vw, 3.6rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      margin-bottom: 32px;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin-top: 96px;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .lead {
-      font-size: 1.25rem;
-      color: var(--fg);
-      max-width: 38em;
-    }
-
-    a {
-      color: var(--fg);
-      text-decoration: none;
-      border-bottom: 1px solid var(--faint);
-    }
-
-    a:hover {
-      border-bottom-color: var(--fg);
-    }
-
-    .links {
-      margin-top: 40px;
-    }
-
-    .links a {
-      margin-right: 24px;
-      font-size: 0.95rem;
-    }
-
-    footer {
-      margin-top: 140px;
-      font-size: 0.85rem;
-      color: var(--faint);
-    }
-  </style>
+  <link rel="stylesheet" href="/about.Dsfk5ee4.css">
 </head>
 
-<body>
-  <main>
-    <h1>OpenClaw HexonBot</h1>
+<body class="bg-background text-foreground">
 
-    <p class="lead">
-      An open-source hexapod robotics platform focused on mechanical clarity,
-      modular electronics, and systems you’re meant to take apart.
-    </p>
+<header>
+  <div class="mx-auto max-w-3xl px-4 py-6">
+    <a href="/" class="text-2xl font-semibold">
+      HexonBot
+    </a>
+  </div>
+  <div class="max-w-3xl mx-auto px-4">
+    <hr class="border-border">
+  </div>
+</header>
 
-    <div class="links">
-      <a href="https://github.com/YOUR_USERNAME/OpenClaw-HexonBot">GitHub</a>
-      <a href="#">Docs</a>
-      <a href="#">Hardware</a>
-      <a href="#">Community</a>
+<main id="main-content" class="max-w-3xl mx-auto px-4">
+
+  <section id="hero" class="pt-6 pb-4">
+    <div class="flex flex-col sm:flex-row items-start gap-4">
+
+      <div class="flex-1 text-center sm:text-left">
+        <h1 class="my-2 text-2xl font-bold sm:my-4 sm:text-3xl">
+          Hi, this is HexonBot.
+        </h1>
+
+        <p class="opacity-80">
+          A hexapod robotics platform focused on mechanical clarity,
+          modular electronics, and software you’re expected to tear apart.
+        </p>
+
+        <div class="mt-4 flex items-center justify-center sm:justify-start gap-2">
+          <a href="https://github.com/YOUR_USERNAME/hexonbot"
+             class="hover:text-accent">
+            GitHub
+          </a>
+          <span class="opacity-50">·</span>
+          <a href="/docs" class="hover:text-accent">
+            Docs
+          </a>
+          <span class="opacity-50">·</span>
+          <a href="/hardware" class="hover:text-accent">
+            Hardware
+          </a>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <h2>Principles</h2>
-    <p>
-      Open by default. Designed for iteration, inspection, and modification —
-      both in hardware and software.
+  <div class="my-6">
+    <hr class="border-border">
+  </div>
+
+  <section class="pt-6 pb-6">
+    <p class="opacity-80">
+      HexonBot is designed as a system, not a demo.
+      Mechanics, electronics, and control software evolve together.
+      Everything is open. Everything is inspectable.
     </p>
+  </section>
 
-    <h2>Status</h2>
-    <p>
-      Actively developed. Expect change.
-    </p>
+</main>
 
-    <footer>
-      OpenClaw Project
-    </footer>
-  </main>
+<footer class="w-full mt-auto">
+  <div class="max-w-3xl mx-auto px-4">
+    <hr class="border-border">
+  </div>
+
+  <div class="flex flex-col items-center py-6 text-sm opacity-70">
+    <span>HexonBot · CC BY / MIT</span>
+  </div>
+</footer>
+
 </body>
 </html>

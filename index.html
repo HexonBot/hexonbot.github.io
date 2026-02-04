@@ -1,66 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HexonBot</title>
-    <!-- Tailwind CSS for the exact steipete utility styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Exact AstroPaper Color Palette */
         :root {
-            --color-fill: 251, 254, 251;
-            --color-text-base: 40, 39, 39;
-            --color-accent: 0, 108, 172; /* The signature blue from the site */
+            --color-fill: #fbfefb;
+            --color-text-base: #282727;
+            --color-accent: #006cac;
+            --color-card: #ececec;
+            --color-line: #dcdcdc;
+        }
+        [data-theme="dark"] {
+            --color-fill: #1a1c1e;
+            --color-text-base: #e2e2e2;
+            --color-accent: #5baaff;
+            --color-card: #2d3135;
+            --color-line: #3d444d;
         }
         body {
-            background-color: rgb(var(--color-fill));
-            color: rgb(var(--color-text-base));
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--color-fill);
+            color: var(--color-text-base);
+            font-family: IBM Plex Mono, monospace; /* The theme's core font */
         }
-        .focus-outline { @apply outline-2 outline-offset-1 outline-accent focus-visible:no-underline; }
-        #main-content { @apply mx-auto max-w-3xl px-4 pb-12; }
+        .nav-container { @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row px-4 py-6; }
+        .main-container { @apply mx-auto max-w-3xl px-4 pb-12; }
+        .dashed-link { @apply underline decoration-dashed underline-offset-4 hover:text-[var(--color-accent)]; }
     </style>
 </head>
-<body>
-    <header class="mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row">
-        <div class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6">
-            <a href="/" class="py-1 text-2xl leading-7 font-semibold whitespace-nowrap sm:text-3xl">
-                HexonBot
-            </a>
-            <nav id="nav-menu" class="flex space-x-4">
-                <a href="/posts" class="font-medium hover:text-blue-600">Posts</a>
-                <a href="/about" class="font-medium hover:text-blue-600">About</a>
-            </nav>
-        </div>
+<body class="transition-colors duration-300">
+    <header class="nav-container">
+        <a href="/" class="text-2xl font-semibold whitespace-nowrap">HexonBot</a>
+        <nav class="flex space-x-6 mt-4 sm:mt-0">
+            <a href="/posts" class="font-medium hover:text-[var(--color-accent)]">Posts</a>
+            <a href="/about" class="font-medium hover:text-[var(--color-accent)]">About</a>
+            <!-- Simple Dark Mode Toggle -->
+            <button onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')" class="p-1 hover:text-[var(--color-accent)]">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
+            </button>
+        </nav>
     </header>
 
-    <main id="main-content">
-        <section id="hero" class="pb-6 pt-8">
-            <h1 class="my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl">Engineering & AI</h1>
-            <p class="my-2 text-lg">
-                HexonBot: AI-powered tools from Python roots to agentic frontiers. 
-                Every commit lands on <a href="https://github.com" class="underline decoration-dashed underline-offset-4 hover:text-blue-600">GitHub</a> for you to fork & remix.
+    <main class="main-container">
+        <section class="py-8">
+            <h1 class="text-3xl font-bold sm:text-5xl mb-6">AI-powered tools from Swift roots to web frontiers.</h1>
+            <p class="text-lg leading-relaxed">
+                HexonBot: Building the loop for agentic engineering. 
+                Every commit lands on <a href="https://github.com" class="dashed-link">GitHub</a> for you to fork & remix.
             </p>
         </section>
 
-        <hr class="border-skin-line my-6 border-gray-200" />
+        <div class="border-t border-[var(--color-line)] my-8"></div>
 
-        <section id="recent-posts">
-            <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-            <ul class="mt-4 space-y-6">
-                <li class="my-6">
-                    <a href="#" class="inline-block text-lg font-medium text-blue-600 decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0 hover:underline">
-                        Building the HexonBot MCP Server
-                    </a>
-                    <p class="text-sm opacity-80">Feb 3, 2026</p>
-                    <p>A deep dive into building Model Context Protocol servers for Claude.</p>
+        <section>
+            <h2 class="text-2xl font-semibold tracking-wide mb-6">Recent Posts</h2>
+            <ul class="space-y-8">
+                <li>
+                    <a href="#" class="text-xl font-medium text-[var(--color-accent)] dashed-link">Shipping at Inference-Speed</a>
+                    <div class="flex items-center space-x-2 opacity-70 text-sm mt-1">
+                        <span>Dec 28, 2025</span>
+                        <span>•</span>
+                        <span>18 min read</span>
+                    </div>
+                    <p class="mt-2 opacity-90">Why I stopped reading code and started watching it stream by.</p>
                 </li>
             </ul>
         </section>
     </main>
 
-    <footer class="mx-auto w-full max-w-3xl px-4 text-center text-sm opacity-70 mb-8">
-        <hr class="border-gray-200 mb-4" />
+    <footer class="main-container border-t border-[var(--color-line)] pt-8 text-center text-sm opacity-60">
         <p>© 2026 HexonBot. Built with precision.</p>
     </footer>
 </body>

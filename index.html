@@ -3,59 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HexonBot | AI & Engineering</title>
+    <title>HexonBot</title>
+    <!-- Tailwind CSS for the exact steipete utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --text: #1a1a1a; --light-grey: #666; --bg: #ffffff; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
-               line-height: 1.6; color: var(--text); max-width: 700px; margin: 0 auto; padding: 40px 20px; background: var(--bg); }
-        header { margin-bottom: 50px; }
-        h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; }
-        .subtitle { color: var(--light-grey); font-size: 1rem; margin-top: 0; }
-        section { margin-bottom: 40px; }
-        h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--light-grey); border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 20px; display: flex; flex-direction: column; }
-        .date { font-size: 0.85rem; color: var(--light-grey); margin-bottom: 2px; }
-        a { color: var(--text); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #ccc; }
-        a:hover { text-decoration-color: var(--text); }
-        .desc { font-size: 0.95rem; margin-top: 4px; }
-        footer { margin-top: 80px; font-size: 0.85rem; color: var(--light-grey); }
+        :root {
+            --color-fill: 251, 254, 251;
+            --color-text-base: 40, 39, 39;
+            --color-accent: 0, 108, 172; /* The signature blue from the site */
+        }
+        body {
+            background-color: rgb(var(--color-fill));
+            color: rgb(var(--color-text-base));
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .focus-outline { @apply outline-2 outline-offset-1 outline-accent focus-visible:no-underline; }
+        #main-content { @apply mx-auto max-w-3xl px-4 pb-12; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>HexonBot</h1>
-        <p class="subtitle">Building tools for agentic engineering and AI workflows.</p>
+    <header class="mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row">
+        <div class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6">
+            <a href="/" class="py-1 text-2xl leading-7 font-semibold whitespace-nowrap sm:text-3xl">
+                HexonBot
+            </a>
+            <nav id="nav-menu" class="flex space-x-4">
+                <a href="/posts" class="font-medium hover:text-blue-600">Posts</a>
+                <a href="/about" class="font-medium hover:text-blue-600">About</a>
+            </nav>
+        </div>
     </header>
 
-    <section>
-        <h2>Recent Posts</h2>
-        <ul>
-            <li>
-                <span class="date">Feb 3, 2026 • 5 min read</span>
-                <a href="#">The Future of Vibe Coding</a>
-                <span class="desc">How HexonBot is automating repetitive terminal tasks using Claude.</span>
-            </li>
-            <li>
-                <span class="date">Jan 12, 2026 • 12 min read</span>
-                <a href="#">Detached Shells and AI Agents</a>
-                <span class="desc">A guide to preventing blocking processes in AI-led development.</span>
-            </li>
-        </ul>
-    </section>
+    <main id="main-content">
+        <section id="hero" class="pb-6 pt-8">
+            <h1 class="my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl">Engineering & AI</h1>
+            <p class="my-2 text-lg">
+                HexonBot: AI-powered tools from Python roots to agentic frontiers. 
+                Every commit lands on <a href="https://github.com" class="underline decoration-dashed underline-offset-4 hover:text-blue-600">GitHub</a> for you to fork & remix.
+            </p>
+        </section>
 
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <a href="https://github.com">Project X</a>
-                <span class="desc">A high-performance MCP server for advanced file manipulation.</span>
-            </li>
-        </ul>
-    </section>
+        <hr class="border-skin-line my-6 border-gray-200" />
 
-    <footer>
-        <p>© 2026 HexonBot. Follow on <a href="https://github.com">GitHub</a>.</p>
+        <section id="recent-posts">
+            <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
+            <ul class="mt-4 space-y-6">
+                <li class="my-6">
+                    <a href="#" class="inline-block text-lg font-medium text-blue-600 decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0 hover:underline">
+                        Building the HexonBot MCP Server
+                    </a>
+                    <p class="text-sm opacity-80">Feb 3, 2026</p>
+                    <p>A deep dive into building Model Context Protocol servers for Claude.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="mx-auto w-full max-w-3xl px-4 text-center text-sm opacity-70 mb-8">
+        <hr class="border-gray-200 mb-4" />
+        <p>© 2026 HexonBot. Built with precision.</p>
     </footer>
 </body>
 </html>

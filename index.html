@@ -1,78 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HexonBot</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Exact AstroPaper Color Palette */
-        :root {
-            --color-fill: #fbfefb;
-            --color-text-base: #282727;
-            --color-accent: #006cac;
-            --color-card: #ececec;
-            --color-line: #dcdcdc;
-        }
-        [data-theme="dark"] {
-            --color-fill: #1a1c1e;
-            --color-text-base: #e2e2e2;
-            --color-accent: #5baaff;
-            --color-card: #2d3135;
-            --color-line: #3d444d;
-        }
-        body {
-            background-color: var(--color-fill);
-            color: var(--color-text-base);
-            font-family: IBM Plex Mono, monospace; /* The theme's core font */
-        }
-        .nav-container { @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row px-4 py-6; }
-        .main-container { @apply mx-auto max-w-3xl px-4 pb-12; }
-        .dashed-link { @apply underline decoration-dashed underline-offset-4 hover:text-[var(--color-accent)]; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenClaw HexonBot</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --accent: #0a84ff;
+      --max-width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 64px 24px;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 64px;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      color: var(--fg);
+      margin-bottom: 32px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 20px;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 96px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
-<body class="transition-colors duration-300">
-    <header class="nav-container">
-        <a href="/" class="text-2xl font-semibold whitespace-nowrap">HexonBot</a>
-        <nav class="flex space-x-6 mt-4 sm:mt-0">
-            <a href="/posts" class="font-medium hover:text-[var(--color-accent)]">Posts</a>
-            <a href="/about" class="font-medium hover:text-[var(--color-accent)]">About</a>
-            <!-- Simple Dark Mode Toggle -->
-            <button onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')" class="p-1 hover:text-[var(--color-accent)]">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
-            </button>
-        </nav>
-    </header>
 
-    <main class="main-container">
-        <section class="py-8">
-            <h1 class="text-3xl font-bold sm:text-5xl mb-6">AI-powered tools from Swift roots to web frontiers.</h1>
-            <p class="text-lg leading-relaxed">
-                HexonBot: Building the loop for agentic engineering. 
-                Every commit lands on <a href="https://github.com" class="dashed-link">GitHub</a> for you to fork & remix.
-            </p>
-        </section>
+<body>
+  <main>
+    <h1>OpenClaw HexonBot</h1>
 
-        <div class="border-t border-[var(--color-line)] my-8"></div>
+    <p class="intro">
+      An open-source hexapod robotics platform focused on clean mechanics,
+      modular electronics, and hackable control software.
+    </p>
 
-        <section>
-            <h2 class="text-2xl font-semibold tracking-wide mb-6">Recent Posts</h2>
-            <ul class="space-y-8">
-                <li>
-                    <a href="#" class="text-xl font-medium text-[var(--color-accent)] dashed-link">Shipping at Inference-Speed</a>
-                    <div class="flex items-center space-x-2 opacity-70 text-sm mt-1">
-                        <span>Dec 28, 2025</span>
-                        <span>•</span>
-                        <span>18 min read</span>
-                    </div>
-                    <p class="mt-2 opacity-90">Why I stopped reading code and started watching it stream by.</p>
-                </li>
-            </ul>
-        </section>
-    </main>
+    <div class="links">
+      <a href="https://github.com/YOUR_USERNAME/OpenClaw-HexonBot">GitHub</a>
+      <a href="#">Documentation</a>
+      <a href="#">Hardware</a>
+      <a href="#">Community</a>
+    </div>
 
-    <footer class="main-container border-t border-[var(--color-line)] pt-8 text-center text-sm opacity-60">
-        <p>© 2026 HexonBot. Built with precision.</p>
+    <h2>Why HexonBot?</h2>
+    <p>
+      HexonBot is designed for experimentation. Every part is open, documented,
+      and meant to be modified — from the claw geometry to the gait algorithms.
+    </p>
+
+    <h2>What’s inside</h2>
+    <p>
+      • Parametric mechanical design<br>
+      • OpenClaw gripper system<br>
+      • Modular servo & controller layout<br>
+      • Firmware and simulation support
+    </p>
+
+    <h2>Status</h2>
+    <p>
+      Actively developed. Expect breaking changes, frequent improvements,
+      and thoughtful design decisions.
+    </p>
+
+    <footer>
+      © 2026 OpenClaw Project · Built with curiosity and too many servos
     </footer>
+  </main>
 </body>
 </html>
